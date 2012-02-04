@@ -1,0 +1,40 @@
+<html>
+	<head>
+    <script language="javascript" type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script language="javascript" type="text/javascript" src="http://people.iola.dk/olau/flot/jquery.flot.js"></script>
+	</head>
+	<body>
+		<h1>word results</h1>
+		<div id="placeholder" style="width:600px;height:300px"></div>
+<script type="text/javascript">
+	var worddata = {% autoescape off %}{{ wordcount }}{% endautoescape %}
+	$(function () {
+		var label = "Usages of Words";
+		var data = [];
+		var labels = [];
+		for (var i = 0; i < worddata.length; i++) {
+			data.push([i, worddata[i][1]]);
+			labels.push([i, worddata[i][0]]);
+		}
+		$.plot($("#placeholder"), [
+				{
+					label: label,
+					data: data,
+					bars: { show: true, align: "center" }
+				}
+			],
+			{
+				xaxis: {
+					ticks: labels
+				},
+				grid: {
+					backgroundColor: { colors: ["#fff", "#eee"] }
+				}
+			});
+    });
+</script>
+		
+		<p>Shortest Word: {{ shortest }}</p>
+		<p>Longest Word: {{ longest }}</p>
+	</body>
+</html>

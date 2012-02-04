@@ -1,0 +1,15 @@
+<html>
+	<head>
+	</head>
+	<body>
+		<h1>get stats</h1>
+		<form action="/stats" method="post">
+			{% csrf_token %}
+			<label for="url">
+				URL:
+				<input name="url" type="text" value="http://www.keza.net"/>
+			</label>
+			<input type="submit" value="Submit" />
+		</form>
+	</body>
+</html>

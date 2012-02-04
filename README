@@ -1,7 +1,10 @@
-trying TDD
-will have to integrate later
+Thoughts
+Used a primitive form of TDD using assert
+Integrated into web later
 1 hour to get filtered word count but with duplicates
 1 hour to fix duplicates and get shortest longest words and limit to 10
+1 hour to get web UI and graph
+Avoided trying to reuse modules as it is kind of different from previous exercises and last time that took an extra hour.
 
 Simple Part: 
 - Use the Python website that you created in week 2 assignment. 
